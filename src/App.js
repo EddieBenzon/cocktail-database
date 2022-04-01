@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./Components/Navbar";
+import SearchForm from "./Components/SearchForm.js";
+import Loading from "./Components/Loading";
+import Error from "./Error";
+import Home from "./Home";
+import About from "./About";
+import CocktailDetails from "./CocktailDetails";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
+  const { id } = CocktailDetails;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/cocktail/:id" element={<CocktailDetails />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </>
   );
 }
 
