@@ -1,14 +1,16 @@
 import Navbar from "./Components/Navbar";
-import SearchForm from "./Components/SearchForm.js";
-import Loading from "./Components/Loading";
-import Error from "./Error";
-import Home from "./Home";
-import About from "./About";
-import CocktailDetails from "./CocktailDetails";
+import Error from "./Pages/Error";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import CocktailDetails from "./Pages/CocktailDetails";
 import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 
 function App() {
-  const { id } = CocktailDetails;
+  useEffect(() => {
+    document.title = "Cocktail Recipes";
+  }, []);
+
   return (
     <>
       <Navbar />

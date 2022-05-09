@@ -56,16 +56,22 @@ button:active {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  text-shadow: 5px 5px 5px black;
 }
 .nav-container p {
-  margin-left: 50px;
+  margin-left: 30px;
+  padding: 6px 10px;
+  border-radius: 0.5rem;
+  color: var(--custom-blue);
+  background-color: white;
 }
-
+.nav-container p:hover {
+  cursor: pointer;
+  background-color: rgb(229, 241, 255);
+}
 /* Search Form Styles */
 .search-container {
   border-radius: 0.7rem;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   padding: 20px 25px 20px 25px;
   margin-top: 50px;
   display: flex;
@@ -297,6 +303,17 @@ button:active {
   }
 }
 
+/* Transition Styles */
+
+@media only screen and (max-width: 662px) {
+  .nav-container {
+    flex-direction: column;
+  }
+  .nav-container p {
+    margin-bottom: 10px;
+  }
+}
+
 /* Mobile styles */
 
 @media only screen and (max-width: 623px) {
@@ -307,15 +324,14 @@ button:active {
     font-size: 24px;
   }
   .nav-title {
-    font-size: 40px;
+    font-size: 50px;
   }
   .nav-container {
     display: flex;
-    flex-direction: column;
-    margin: 0;
+    flex-direction: row;
   }
   .nav-container p {
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
   }
   .cocktail-grid {
     grid-template-columns: auto;
@@ -345,8 +361,7 @@ button:active {
   .section-about p {
     font-size: 22px;
   }
-  .nav-title,
-  .nav-container {
+  .nav-title {
     text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.6);
   }
   .search-container {
