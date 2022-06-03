@@ -40,6 +40,8 @@ button:active {
   align-items: center;
   justify-content: space-between;
   background-image: url("./../src/images/beach-gf2290d081_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position-y: -600px;
   overflow: hidden;
   height: 180px;
@@ -67,6 +69,10 @@ button:active {
 .nav-container p:hover {
   cursor: pointer;
   background-color: rgb(229, 241, 255);
+}
+.hamburger,
+.hamburger-open {
+  display: none;
 }
 /* Search Form Styles */
 .search-container {
@@ -114,6 +120,7 @@ button:active {
   margin-bottom: 50px;
   display: grid;
   grid-template-columns: auto auto auto;
+  animation: fadeIn 1.5s;
 }
 .cocktail-grid-item {
   background-color: rgb(229, 241, 255);
@@ -122,6 +129,7 @@ button:active {
   padding: 10px;
   margin: 10px 10px;
   max-width: 320px;
+  animation: fadeIn 2s;
 }
 
 .cocktail-grid-item img {
@@ -163,6 +171,7 @@ button:active {
   width: 400px;
   object-fit: cover;
   border-radius: 0.7rem;
+  animation: fadeIn 1.5s;
 }
 .details-container {
   margin-left: 20px;
@@ -175,6 +184,7 @@ button:active {
   background-color: white;
   border-radius: 0.7rem;
   font-family: "roboto", sans-serif;
+  animation: zipLeft 0.4s;
 }
 .details-container-lower {
   align-self: flex-end;
@@ -278,6 +288,8 @@ button:active {
   .navbar {
     padding: 30px;
     font-size: 34px;
+    height: 180px;
+    background-position-y: 0px;
   }
   .nav-title {
     font-size: 70px;
@@ -320,18 +332,40 @@ button:active {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 5px;
+    padding: 0px;
     font-size: 24px;
+    background-position-y: 0px;
+    height: 164px;
   }
   .nav-title {
-    font-size: 50px;
+    font-size: 58px;
+    margin-bottom: 14px;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.6);
   }
   .nav-container {
-    display: flex;
-    flex-direction: row;
+    display: none;
   }
-  .nav-container p {
-    margin-bottom: 10px;
+  .hamburger {
+    display: block;
+  }
+  .hamburger-icon {
+    width: 70px;
+    height: 70px;
+    color: var(--custom-blue);
+    background-color: white;
+    border-radius: 0.5rem;
+  }
+  .hamburger-open {
+    padding: 20px;
+    padding-bottom: 5px;
+    display: block;
+    background-color: white;
+    color: var(--custom-blue);
+    animation: fadeIn 0.5s;
+  }
+  .ham-element {
+    font-size: 30px;
+    margin: 0 0 14px 0;
   }
   .cocktail-grid {
     grid-template-columns: auto;
@@ -360,9 +394,6 @@ button:active {
   }
   .section-about p {
     font-size: 22px;
-  }
-  .nav-title {
-    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.6);
   }
   .search-container {
     padding: 8px;
@@ -401,5 +432,27 @@ button:active {
   }
   .error-msg {
     font-size: 24px;
+  }
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zipLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
