@@ -8,7 +8,7 @@ const CocktailList = () => {
   if (loading) {
     return <Loading />;
   }
-  if (cocktails.length < 1) {
+  if (!loading && cocktails.length < 1) {
     return (
       <h4 className="no-cocktails-matched">
         No cocktails matched your search term
